@@ -292,7 +292,7 @@ trait ValidatesInput
                 foreach ($data as $key => $value) {
                     $data[$key] = $this->filterCollectionDataDownToSpecificKeys($value, $ruleKeys, $fieldKeys);
                 }
-            } else {
+            } else if (array_key_exists($fieldKey, $data)) {
                 // Otherwise filter collection down to a specific key
                 $keyData = $data[$fieldKey];
 
